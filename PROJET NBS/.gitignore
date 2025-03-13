@@ -1,5 +1,5 @@
 # Ignorer la documentation générée
-docs/
+doc/
 
 # Ignorer les clés et configurations sensibles
 keys/
