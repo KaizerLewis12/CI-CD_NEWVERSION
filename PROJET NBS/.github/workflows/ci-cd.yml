@@ -38,8 +38,8 @@ jobs:
           # Déplacer la documentation générée dans le dossier doc
           mv script.html doc/index.html
 
-      - name: Créer un fichier ZIP du modèle et de la doc
-        run: zip -r output.zip model/ doc/
+      - name: Créer un fichier ZIP du modèle et de la docs
+        run: zip -r output.zip model/ docs/
 
       - name: Envoyer un email avec le fichier ZIP
         env:
