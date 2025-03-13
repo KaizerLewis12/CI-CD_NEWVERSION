@@ -1,0 +1,48 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Exécuter le script d'entraînement
+        run: python script/train.py
+
+      - name: Valider le modèle
+        run: python script/validate.py
+
+      - name: Déployer le modèle
+        run: python script/deploy.py
+
+      - name: Générer la documentation
+        run: |
+          # Exemple : générer la documentation pour le dossier script
+          pydoc -w script
+          # Déplacer la documentation générée dans le dossier doc
+          mv script.html doc/index.html
+
+      - name: Créer un fichier ZIP du modèle et de la doc
+        run: zip -r output.zip model/ doc/
+
+      - name: Envoyer un email avec le fichier ZIP
+        env:
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: python script/send_email.py output.zip
