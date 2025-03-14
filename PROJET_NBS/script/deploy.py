@@ -7,7 +7,7 @@ def deploy_model():
     Simule le déploiement du modèle en copiant le fichier du modèle.
     """
     source = 'model.pkl'
-    destination = '../model/deployed_model.pkl'
+    destination = 'deployed_model.pkl'
 
     try:
         shutil.copy(source, destination)

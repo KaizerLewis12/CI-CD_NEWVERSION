@@ -38,7 +38,7 @@ def send_email(zip_filepath):
         "Bonjour,\n\n"
         "Veuillez trouver ci-joint le modèle déployé et la documentation générée.\n\n"
         "Cordialement,\n"
-        "L'équipe IA NBS"
+        "L'équipe IA NBS (NTONGA - BACHIR - SIMO)"
     )
 
     # Création du message email
