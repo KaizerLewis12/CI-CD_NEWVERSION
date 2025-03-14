@@ -3,10 +3,10 @@ name: CI/CD pour mon projet IA
 on:
   push:
     branches:
-      - lewis  # CI/CD s'exécute à chaque push sur lewis
+      - main  # CI/CD s'exécute à chaque push sur lewis
   pull_request:
     branches:
-      - lewis  # CI/CD s'exécute aussi pour les PRs
+      - main  # CI/CD s'exécute aussi pour les PRs
 
 jobs:
   train_validate_deploy:
