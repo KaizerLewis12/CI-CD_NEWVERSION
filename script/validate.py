@@ -18,7 +18,7 @@ def main():
 
     # Chargement du modèle entraîné
     try:
-        model = joblib.load('../model/model.pkl')
+        model = joblib.load('model_validate.pkl')
     except Exception as e:
         print("Erreur lors du chargement du modèle :", e)
         return

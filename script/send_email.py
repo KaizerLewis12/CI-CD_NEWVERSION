@@ -89,7 +89,7 @@ def send_email(zip_filepath):
 def main():
     # Le fichier ZIP "model_send.zip" est dans le même dossier que ce script.
     current_dir = os.path.dirname(os.path.realpath(__file__))
-    zip_filepath = os.path.join(current_dir, "model_send.zip")
+    zip_filepath = os.path.join("deployed_model.zip")
     send_email(zip_filepath)
 
 

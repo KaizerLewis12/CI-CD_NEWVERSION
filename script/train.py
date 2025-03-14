@@ -30,7 +30,7 @@ def main():
     model = train_model(X, y)
 
     # Sauvegarde du modèle dans le dossier ../model/
-    model_path = 'model.pkl'
+    model_path = 'models.pkl'
     joblib.dump(model, model_path)
     print(f"Modèle entraîné et sauvegardé dans {model_path}")
 
