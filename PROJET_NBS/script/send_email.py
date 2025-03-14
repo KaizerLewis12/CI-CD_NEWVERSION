@@ -66,7 +66,7 @@ def send_email(zip_filepath):
         smtp_server = config.get('smtp_server', 'smtp.gmail.com')
         smtp_port = config.get('smtp_port', 587)
         smtp_username = config.get('smtp_username', 'contactshydra0@gmail.com')
-        smtp_password = config.get('smtp_password', 'Fomba@416')
+        smtp_password = config.get('smtp_password', 'aerw wpms oyie tspi')
 
     try:
         smtp_port = int(smtp_port)
