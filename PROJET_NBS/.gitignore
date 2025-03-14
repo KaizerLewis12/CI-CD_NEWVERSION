@@ -1,9 +1,0 @@
-# Ignorer la documentation générées
-doc/
-
-# Ignorer les clés et configurations sensibles
-keys/
-
-# Ignorer les fichiers Python compilés
-*.pyc
-__pycache__/
