@@ -34,4 +34,9 @@ jobs:
         run: python script/deploy.py
 
       - name: 📧 Envoyer un email avec le modèle et la doc
-        run: python script/send_email.py
+        env:
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: python script/send_email.py model_send.zip
